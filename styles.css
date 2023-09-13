@@ -17,6 +17,7 @@ body {
   justify-content: center;
   background-color: #8b8b8b;
   gap: 2vw;
+  padding: 5vw;
 }
 
 .form {
@@ -59,12 +60,49 @@ form .field {
   margin-top: 3vh;
 }
 
-.field input,
-.field button {
+.field input {
   height: 100%;
   width: 100%;
   border: none;
   border-radius: 8px;
+}
+
+.field,
+.button-login {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: black;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-login:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+}
+
+.button-field-sign-up {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #fff;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-field-sign-up:hover {
+  background-color: black;
+  color: #fff;
 }
 
 .field input {
@@ -73,10 +111,10 @@ form .field {
   border-radius: 8px;
 }
 
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
+.btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+  width: 100%;
+  gap: 2vw;
 }
