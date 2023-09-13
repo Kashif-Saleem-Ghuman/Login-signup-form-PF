@@ -18,6 +18,8 @@ passShowHide.forEach((icon) => {
   });
 });
 
+// Add data to local storage
+
 window.onload = () => {
   // Check local storage support
   if (localStorage) {
@@ -59,3 +61,13 @@ window.onload = () => {
     });
   }
 };
+
+// add class clock to sign up on click of sign up button
+
+const signUpBtn = document.querySelector(".sign-up-btn");
+
+signUpBtn.addEventListener("click", () => {
+  forms.classList.add("hide");
+
+  document.querySelector(".signUpForm").classList.add("show");
+});

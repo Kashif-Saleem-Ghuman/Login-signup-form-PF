@@ -72,3 +72,11 @@ form .field {
   padding: 1vw;
   border-radius: 8px;
 }
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
