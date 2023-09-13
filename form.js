@@ -1,17 +1,19 @@
-const createForm = () => {
-  return ``;
-};
+const forms = document.querySelector(".forms"),
+  passShowHide = document.querySelectorAll(".eye-icon"),
+  links = document.querySelectorAll(".link");
 
-const form = document.getElementById("formContainer");
+console.log(forms, passShowHide, links);
 
-form.innerHTML = createForm();
-
-function Toggle() {
-  let password = document.getElementById("exampleInputPassword1");
-
-  if (password.type === "password") {
-    password.type = "text";
-  } else {
-    password.type = "password";
-  }
-}
+// Show and Hide Password
+passShowHide.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let pwField = icon.previousElementSibling;
+    if (pwField.type === "password") {
+      pwField.type = "text";
+      icon.classList.add("fa-eye-slash");
+    } else {
+      pwField.type = "password";
+      icon.classList.remove("fa-eye-slash");
+    }
+  });
+});
