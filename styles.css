@@ -16,6 +16,7 @@ body {
   align-self: center;
   justify-content: center;
   background-color: #8b8b8b;
+  gap: 2vw;
 }
 
 .form {

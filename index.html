@@ -11,18 +11,21 @@
     <title>Form</title>
   </head>
   <body>
-    <!-- <div class="container mt-3" id="formContainer"></div> -->
-
     <section class="container forms">
       <div class="form login">
         <header class="form-content">Login</header>
-        <form action="#">
+        <form id="LoginForm" action="#">
           <div class="field input-field">
-            <input type="email" placeholder="Email" class="input" />
+            <input type="email" placeholder="Email" id="email" class="input" />
           </div>
 
           <div class="field input-field">
-            <input type="password" placeholder="Password" class="password" />
+            <input
+              type="password"
+              placeholder="Password"
+              id="passwordLogin"
+              class="password"
+            />
             <i class="bx bxs-hide eye-icon"></i>
           </div>
 
@@ -40,42 +43,58 @@
 
       <div class="form login">
         <header class="form-content">Sign Up</header>
-        <form action="#">
+        <form id="signupForm" action="#">
           <div class="field input-field">
-            <input type="First Name" placeholder="text" class="input" />
+            <input
+              type="text"
+              placeholder="First Name"
+              class="input"
+              id="firstName"
+            />
           </div>
 
           <div class="field input-field">
-            <input type="Last Name" placeholder="text" class="input" />
+            <input type="text" placeholder="Last Name" class="input"
+            id="lastName" />
           </div>
 
           <div class="field input-field">
-            <input type="email" placeholder="Email" class="input" />
+            <input type="email" placeholder="Email" class="input"
+            id="signupEmail"
+            />
           </div>
 
           <div class="field input-field">
-            <input type="password" placeholder="Password" class="password" />
+            <input type="password" placeholder="Password" class="password"
+            id="signupPassword"
+            />
             <i class="bx bxs-hide eye-icon"></i>
           </div>
 
-          <div class="field input-field">
-            <input type="Address" placeholder="text" class="password" />
+          <div class="field input-field"
+          id="address"
+          >
+            <input type="Address"
+            id="phoneNumber"
+            placeholder="text" class="password" />
           </div>
 
           <div class="field input-field">
             <input type="text" placeholder="Phone Number" class="password" />
           </div>
 
-          <div class="field input-field">
+          <!-- <div class="field input-field">
             <input type="image" placeholder="Image Upload" class="password" />
-          </div>
+          </div> -->
 
           <div class="field button-field">
             <button>Login</button>
           </div>
 
           <div class="form-link link">
-            <a href="#"><button>Log In</button></a>
+            <a href="#"
+              ><button">Log In</button></a
+            >
           </div>
         </form>
       </div>
