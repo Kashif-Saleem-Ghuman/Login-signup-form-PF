@@ -79,6 +79,19 @@ const addSignUpData = () => {
       localStorage.setItem("address-SignUp", address);
       localStorage.setItem("phoneNumber-SignUp", phoneNumber);
       localStorage.setItem("image-SignUp", image);
+
+      // Redirect to Login page but with some delay and
+      // after the data has been saved to localStorage
+
+      // show message
+      let message = document.createElement("div");
+      message.className = "message";
+      message.innerHTML = "You have successfully signed up redirecting to login page";
+      forms.appendChild(message);
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2000);
     }
   });
 };
