@@ -55,6 +55,7 @@ const addSignUpData = () => {
     let signUpPassword = document.getElementById("signupPassword").value;
     let address = document.getElementById("address").value;
     let phoneNumber = document.getElementById("phoneNumber").value;
+    let image = document.getElementById("image").value;
 
     //validate if the user has entered data
 
@@ -64,7 +65,8 @@ const addSignUpData = () => {
       signUpEmail === "" ||
       signUpPassword === "" ||
       address === "" ||
-      phoneNumber === ""
+      phoneNumber === "" ||
+      image === ""
     ) {
       alert("Please fill in all fields");
       return false;
@@ -76,6 +78,7 @@ const addSignUpData = () => {
       localStorage.setItem("password-SignUp", signUpPassword);
       localStorage.setItem("address-SignUp", address);
       localStorage.setItem("phoneNumber-SignUp", phoneNumber);
+      localStorage.setItem("image-SignUp", image);
     }
   });
 };
