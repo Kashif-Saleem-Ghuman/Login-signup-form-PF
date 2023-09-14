@@ -82,7 +82,9 @@
           <!-- Camera setup for picture using webcam.js -->
           <div id="camera"></div>
           <button onclick="takePic()">Take Picture</button>
+          <button onclick="activateCamera()">Activate Camera</button>
           <div id="activate camera"></div>
+
           <div id="results"></div>
 
           <div class="btn-wrapper">
@@ -135,8 +137,10 @@
           Webcam.reset();
         });
       }
-
-      //add button to activate camera again
+      // activate camera
+      function activateCamera() {
+        Webcam.attach("#camera");
+      }
     </script>
   </body>
 </html>
