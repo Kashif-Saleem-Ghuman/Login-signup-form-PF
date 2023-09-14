@@ -82,6 +82,7 @@
           <!-- Camera setup for picture using webcam.js -->
           <div id="camera"></div>
           <button onclick="takePic()">Take Picture</button>
+          <div id="activate camera"></div>
           <div id="results"></div>
 
           <div class="btn-wrapper">
@@ -129,8 +130,13 @@
 
           // add to local storage
           localStorage.setItem("imageCapture", data_uri);
+
+          // shutdown camera
+          Webcam.reset();
         });
       }
+
+      //add button to activate camera again
     </script>
   </body>
 </html>
