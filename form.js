@@ -2,8 +2,6 @@ const forms = document.querySelector(".forms"),
   passShowHide = document.querySelectorAll(".eye-icon"),
   links = document.querySelectorAll(".link");
 
-console.log(forms, passShowHide, links);
-
 // Show and Hide Password
 passShowHide.forEach((icon) => {
   icon.addEventListener("click", () => {
@@ -27,7 +25,6 @@ const addLoginData = () => {
     e.preventDefault();
     // Get the data from the form for Login
     let email = document.getElementById("email").value;
-    console.log(email);
     let password = document.getElementById("passwordLogin").value;
 
     //vaildate if the user has entered data
@@ -98,5 +95,3 @@ const addSignUpData = () => {
 };
 
 // load webcam
-
-
