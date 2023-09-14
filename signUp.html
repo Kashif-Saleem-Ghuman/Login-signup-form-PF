@@ -82,6 +82,7 @@
           <!-- Camera setup for picture using webcam.js -->
           <div id="camera"></div>
           <button onclick="takePic()">Take Picture</button>
+          <div id="results"></div>
 
           <div class="btn-wrapper">
             <div>
@@ -121,22 +122,10 @@
       Webcam.attach("#camera");
 
       function takePic() {
-        navigator.mediaDevices
-          .getUserMedia({ video: true })
-          .then(function (stream) {
-            // Access to the webcam is granted, so you can proceed with taking a picture.
-            Webcam.snap(function (data_uri) {
-              document.getElementById("camera").innerHTML =
-                '<img src="' + data_uri + '"/>';
-            });
-
-            // Don't forget to stop the webcam stream when you're done.
-            stream.getTracks().forEach((track) => track.stop());
-          })
-          .catch(function (error) {
-            // Handle permission denied or other errors here.
-            console.error("Could not access webcam: " + error.name);
-          });
+        Webcam.snap(function (data_uri) {
+          document.getElementById("results").innerHTML =
+            '<img src="' + data_uri + '"/>';
+        });
       }
     </script>
   </body>
