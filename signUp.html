@@ -125,6 +125,9 @@
         Webcam.snap(function (data_uri) {
           document.getElementById("results").innerHTML =
             '<img src="' + data_uri + '"/>';
+
+          // store the image in local storage but parse it to a string first
+          localStorage.setItem("image", JSON.stringify(data_uri));
         });
       }
     </script>
