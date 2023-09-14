@@ -86,7 +86,8 @@ const addSignUpData = () => {
       // show message
       let message = document.createElement("div");
       message.className = "message";
-      message.innerHTML = "You have successfully signed up redirecting to login page";
+      message.innerHTML =
+        "You have successfully signed up redirecting to login page";
       forms.appendChild(message);
 
       setTimeout(() => {
@@ -95,3 +96,7 @@ const addSignUpData = () => {
     }
   });
 };
+
+// load webcam
+
+
