@@ -123,12 +123,33 @@
 
       function takePic() {
         Webcam.snap(function (data_uri) {
-          document.getElementById("results").innerHTML =
-            '<img src="' + data_uri + '"/>';
+          let blob = dataURItoBlob(data_uri);
+          // document.getElementById("results").innerHTML =
+          //   '<img src="' + data_uri + '"/>';
 
           // store the image in local storage but parse it to a string first
-          localStorage.setItem("image", JSON.stringify(data_uri));
+
+          saveBlobToLocalstorage(blob);
         });
+      }
+
+      function dataURItoBlob(dataURI) {
+       let byteString = atob(dataURI.split(",")[1]);
+       let mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
+       let ab = new ArrayBuffer(byteString.length);
+       let ia = new Uint8Array(ab);
+
+        for (var i = 0; i < byteString.length; i++) {
+          ia[i] = byteString.charCodeAt(i);
+        }
+
+        return new Blob([ab], { type: mimeString });
+      }
+
+      function saveBlobToLocalstorage(blob) {
+       let blobUrl = URL.createObjectURL(blob);
+        // Store the Blob URL in local storage
+        localStorage.setItem("imageBlobUrl", blobUrl);
       }
     </script>
   </body>
