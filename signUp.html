@@ -82,7 +82,6 @@
           <!-- Camera setup for picture using webcam.js -->
           <div id="camera"></div>
           <button onclick="takePic()">Take Picture</button>
-          <div id="results"></div>
 
           <div class="btn-wrapper">
             <div>
@@ -124,20 +123,16 @@
       function takePic() {
         Webcam.snap(function (data_uri) {
           let blob = dataURItoBlob(data_uri);
-          // document.getElementById("results").innerHTML =
-          //   '<img src="' + data_uri + '"/>';
-
-          // store the image in local storage but parse it to a string first
-
           saveBlobToLocalstorage(blob);
         });
       }
+      // Function to convert data URI to Blob
 
       function dataURItoBlob(dataURI) {
-       let byteString = atob(dataURI.split(",")[1]);
-       let mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
-       let ab = new ArrayBuffer(byteString.length);
-       let ia = new Uint8Array(ab);
+        let byteString = atob(dataURI.split(",")[1]);
+        let mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
+        let ab = new ArrayBuffer(byteString.length);
+        let ia = new Uint8Array(ab);
 
         for (var i = 0; i < byteString.length; i++) {
           ia[i] = byteString.charCodeAt(i);
@@ -146,8 +141,10 @@
         return new Blob([ab], { type: mimeString });
       }
 
+      // Function to save Blob in local storage
+
       function saveBlobToLocalstorage(blob) {
-       let blobUrl = URL.createObjectURL(blob);
+        let blobUrl = URL.createObjectURL(blob);
         // Store the Blob URL in local storage
         localStorage.setItem("imageBlobUrl", blobUrl);
       }
